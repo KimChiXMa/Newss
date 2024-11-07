@@ -2,7 +2,9 @@
 require 'config.php';
 require 'models/db.php';
 require 'models/category.php';
+require 'models/item.php';
 $cate = new category();
+$item = new item();
 $GetFulCate = $cate->getAllItem();
 ?>
 <!DOCTYPE html>
@@ -20,7 +22,7 @@ $GetFulCate = $cate->getAllItem();
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
@@ -95,8 +97,8 @@ $GetFulCate = $cate->getAllItem();
             <div class="collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse">
                 <div class="navbar-nav mr-auto py-0">
                     <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <?php foreach($GetFulCate as $key=>$value):?>
-                    <a href="category.html" class="nav-item nav-link active"><?php echo $value['name']?></a>
+                    <?php foreach ($GetFulCate as $key => $value): ?>
+                        <a href="category.html" class="nav-item nav-link active"><?php echo $value['name'] ?></a>
                     <?php endforeach ?>
                 </div>
                 <div class="input-group ml-auto d-none d-lg-flex" style="width: 100%; max-width: 300px;">

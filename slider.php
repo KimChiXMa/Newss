@@ -4,19 +4,21 @@
         <div class="col-lg-7 px-0">
             <div class="owl-carousel main-carousel position-relative">
                 <?php
-                $get3NewItem = $cate->getNewItem(0,3);
-                foreach($get3NewItem as $key=>$values):
+                $get3NewItem = $item->getNewItem(0, 3);
+                $get4NewNextItem = $item->getNewItem(3, 4);
+                foreach ($get3NewItem as $key => $values):
+                    $getNameCate = $cate->getItemsByID($values['category']);
                 ?>
-                <div class="position-relative overflow-hidden" style="height: 500px;">
-                    <img class="img-fluid h-100" src="img/news-800x500-1.jpg" style="object-fit: cover;">
-                    <div class="overlay">
-                        <div class="mb-2">
-                            <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href="">Business</a>
-                            <a class="text-white" href="">Jan 01, 2045</a>
+                    <div class="position-relative overflow-hidden" style="height: 500px;">
+                        <img class="img-fluid h-100" src="<?php echo $values['image'] ?>" style="object-fit: cover;">
+                        <div class="overlay">
+                            <div class="mb-2">
+                                <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href=""><?php echo $getNameCate[0]['name'] ?></a>
+                                <a class="text-white" href="">Jan 01, 2045</a>
+                            </div>
+                            <a class="h2 m-0 text-white text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit. Proin vitae porta diam...</a>
                         </div>
-                        <a class="h2 m-0 text-white text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit. Proin vitae porta diam...</a>
                     </div>
-                </div>
                 <?php endforeach ?>
             </div>
         </div>
