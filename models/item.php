@@ -18,4 +18,13 @@ class item extends Db
         $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
         return $items;
     }
+    public function getAllItemByCate($cateid)
+    {
+        $sql = self::$connection->prepare("SELECT * FROM items WHERE category = ?");
+        $sql->bind_param("i", $cateid);
+        $sql->execute();
+        $items = array();
+        $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $items;
+    }
 }

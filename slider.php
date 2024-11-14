@@ -27,7 +27,7 @@
                     <div class="col-md-6 px-0">
 
                         <div class="position-relative overflow-hidden" style="height: 250px;">
-                            <img class="img-fluid w-100 h-100" src="img/news-700x435-1.jpg" style="object-fit: cover;">
+                            <img class="img-fluid w-100 h-100" src=<?php echo $value['image'] ?> style="object-fit: cover;">
                             <div class="overlay">
                                 <div class="mb-2">
                                     <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href="">Business</a>

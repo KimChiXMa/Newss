@@ -98,7 +98,7 @@ $GetFulCate = $cate->getAllItem();
                 <div class="navbar-nav mr-auto py-0">
                     <a href="index.html" class="nav-item nav-link active">Home</a>
                     <?php foreach ($GetFulCate as $key => $value): ?>
-                        <a href="category.html" class="nav-item nav-link active"><?php echo $value['name'] ?></a>
+                        <a href="archive.php?cate-id=<?php $value['id'] ?>" class="nav-item nav-link"><?php echo $value['name'] ?></a>
                     <?php endforeach ?>
                 </div>
                 <div class="input-group ml-auto d-none d-lg-flex" style="width: 100%; max-width: 300px;">
