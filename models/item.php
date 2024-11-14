@@ -27,4 +27,15 @@ class item extends Db
         $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
         return $items;
     }
+    public function getItemByCate($cateid, $page, $count)
+    {
+        //tính số thứ tự trang bắt đầu
+        $start = ($page - 1) * $count;
+        $sql = self::$connection->prepare("SELECT * FROM items WHERE category = ? LIMIT ?,?");
+        $sql->bind_param("iii", $cateid, $start, $count);
+        $sql->execute();
+        $items = array();
+        $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $items;
+    }
 }
